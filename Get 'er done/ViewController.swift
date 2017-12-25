@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UITableViewController {
     var itemArray = ["Learn", "Stay consistent", "be awesome"]
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let items = defaults.array(forKey: "listArray") as? [String] {
+            itemArray = items
+        }
     }
 
     // MARK - Tableview datasource methods
@@ -53,16 +58,16 @@ class ViewController: UITableViewController {
             
             // add new item to our array
             self.itemArray.append(textField.text!)
-            
+            self.defaults.set(self.itemArray, forKey: "listArray")
             // now we need to reload our table view
             self.tableView.reloadData()
-            
-            //print("Sucess")
         }
+        
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
             textField = alertTextField
         }
+        
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
