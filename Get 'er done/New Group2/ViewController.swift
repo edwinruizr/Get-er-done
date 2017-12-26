@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     var itemArray = [Item]()
-    
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -37,23 +37,20 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row].title
-        
+        let item = itemArray[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.accessoryType = item.done ? .checkmark : .none
         return cell
     }
     
     //MARK - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(itemArray[indexPath.row])
-
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }else{
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         // don't highlight the row selected 
         tableView.deselectRow(at: indexPath, animated: true)
+        self.saveData()
     }
     
     //MARK - Add new items
@@ -66,11 +63,12 @@ class ViewController: UITableViewController {
             // what happens after the user hits the add item button
             //print(textField.text!)
             
+            let item = Item()
+            item.title = textField.text!
             // add new item to our array
-            self.itemArray.append(textField.text!)
-            self.defaults.set(self.itemArray, forKey: "listArray")
-            // now we need to reload our table view
-            self.tableView.reloadData()
+            self.itemArray.append(item)
+           
+            self.saveData()
         }
         
         alert.addTextField { (alertTextField) in
@@ -82,6 +80,17 @@ class ViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func saveData(){
+        let encoder = PropertyListEncoder()
+        do{
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        }catch{
+            print("Could not encode item array to plist, \(error)")
+        }
+        // now we need to reload our table view
+        self.tableView.reloadData()
+    }
     
 }
 
