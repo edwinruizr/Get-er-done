@@ -19,15 +19,7 @@ class ViewController: UITableViewController {
 //        if let items = defaults.array(forKey: "listArray") as? [String] {
 //            itemArray = items
 //        }
-        let newItem = Item()
-        newItem.title = "Learn"
-        itemArray.append(newItem)
-        let newItem2 = Item()
-        newItem2.title = "Persist"
-        itemArray.append(newItem2)
-        let newItem3 = Item()
-        newItem3.title = "Focus"
-        itemArray.append(newItem3)
+        loadItems()
     }
 
     // MARK - Tableview datasource methods
@@ -90,6 +82,17 @@ class ViewController: UITableViewController {
         }
         // now we need to reload our table view
         self.tableView.reloadData()
+    }
+    
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataFilePath!){
+           let decoder = PropertyListDecoder()
+            do{
+                itemArray = try decoder.decode([Item].self, from: data)
+            }catch{
+                print("Could not decode item array from plist, \(error)")
+            }
+        }
     }
     
 }
