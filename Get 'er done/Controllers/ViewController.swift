@@ -9,15 +9,25 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var itemArray = ["Learn", "Stay consistent", "be awesome"]
+    var itemArray = [Item]()
+    
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let items = defaults.array(forKey: "listArray") as? [String] {
-            itemArray = items
-        }
+//        if let items = defaults.array(forKey: "listArray") as? [String] {
+//            itemArray = items
+//        }
+        let newItem = Item()
+        newItem.title = "Learn"
+        itemArray.append(newItem)
+        let newItem2 = Item()
+        newItem2.title = "Persist"
+        itemArray.append(newItem2)
+        let newItem3 = Item()
+        newItem3.title = "Focus"
+        itemArray.append(newItem3)
     }
 
     // MARK - Tableview datasource methods
@@ -27,7 +37,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
+        cell.textLabel?.text = itemArray[indexPath.row].title
         
         return cell
     }
