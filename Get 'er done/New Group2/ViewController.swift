@@ -21,6 +21,7 @@ class ViewController: UITableViewController {
 //        if let items = defaults.array(forKey: "listArray") as? [String] {
 //            itemArray = items
 //        }
+        
         loadItems()
     }
 
@@ -87,15 +88,32 @@ class ViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func loadItems(){
-        // read items from database
-        let request : NSFetchRequest<Item> = Item.fetchRequest()
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()){
+        // read items from database with the request sent as parameter or default Item.fetchRequest()
         do{
            itemArray = try context.fetch(request)
         }catch{
             print("Error fetching data from context \(error)")
         }
+        
+        tableView.reloadData()
     }
+    
 
+
+}
+
+//MARK: - Search bar methods
+extension ViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        
+        // query for whatever the user searched
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        loadItems(with: request)
+
+    }
 }
 
