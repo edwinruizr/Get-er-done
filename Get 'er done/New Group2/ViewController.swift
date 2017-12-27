@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UITableViewController {
     var itemArray = [Item]()
@@ -20,7 +21,7 @@ class ViewController: UITableViewController {
 //        if let items = defaults.array(forKey: "listArray") as? [String] {
 //            itemArray = items
 //        }
-        //loadItems()
+        loadItems()
     }
 
     // MARK - Tableview datasource methods
@@ -86,16 +87,15 @@ class ViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-//    func loadItems(){
-//        if let data = try? Data(contentsOf: dataFilePath!){
-//           let decoder = PropertyListDecoder()
-//            do{
-//                itemArray = try decoder.decode([Item].self, from: data)
-//            }catch{
-//                print("Could not decode item array from plist, \(error)")
-//            }
-//        }
-//    }
-    
+    func loadItems(){
+        // read items from database
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do{
+           itemArray = try context.fetch(request)
+        }catch{
+            print("Error fetching data from context \(error)")
+        }
+    }
+
 }
 
