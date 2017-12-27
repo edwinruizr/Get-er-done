@@ -115,5 +115,15 @@ extension ViewController: UISearchBarDelegate{
         loadItems(with: request)
 
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            // run method on main queue (thread)
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
 }
 
