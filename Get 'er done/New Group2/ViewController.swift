@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
     var itemArray = [Item]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let defaults = UserDefaults.standard
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class ViewController: UITableViewController {
 //        if let items = defaults.array(forKey: "listArray") as? [String] {
 //            itemArray = items
 //        }
-        loadItems()
+        //loadItems()
     }
 
     // MARK - Tableview datasource methods
@@ -55,8 +56,10 @@ class ViewController: UITableViewController {
             // what happens after the user hits the add item button
             //print(textField.text!)
             
-            let item = Item()
+            
+            let item = Item(context: self.context)
             item.title = textField.text!
+            item.done = false
             // add new item to our array
             self.itemArray.append(item)
            
@@ -75,25 +78,24 @@ class ViewController: UITableViewController {
     func saveData(){
         let encoder = PropertyListEncoder()
         do{
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+            try context.save()
         }catch{
-            print("Could not encode item array to plist, \(error)")
+           print("Error saving context \(error)")
         }
         // now we need to reload our table view
         self.tableView.reloadData()
     }
     
-    func loadItems(){
-        if let data = try? Data(contentsOf: dataFilePath!){
-           let decoder = PropertyListDecoder()
-            do{
-                itemArray = try decoder.decode([Item].self, from: data)
-            }catch{
-                print("Could not decode item array from plist, \(error)")
-            }
-        }
-    }
+//    func loadItems(){
+//        if let data = try? Data(contentsOf: dataFilePath!){
+//           let decoder = PropertyListDecoder()
+//            do{
+//                itemArray = try decoder.decode([Item].self, from: data)
+//            }catch{
+//                print("Could not decode item array from plist, \(error)")
+//            }
+//        }
+//    }
     
 }
 
