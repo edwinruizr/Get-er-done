@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E8409FC41FF40F1F00EEB32E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8409FC21FF40F1F00EEB32E /* DataModel.xcdatamodeld */; };
+		E8409FE91FF4536600EEB32E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8409FE81FF4536600EEB32E /* CategoryViewController.swift */; };
 		E880A3321FF05A4B00579553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880A3311FF05A4B00579553 /* AppDelegate.swift */; };
 		E880A3341FF05A4B00579553 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880A3331FF05A4B00579553 /* ViewController.swift */; };
 		E880A3371FF05A4B00579553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E880A3351FF05A4B00579553 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		E8409FC31FF40F1F00EEB32E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		E8409FE81FF4536600EEB32E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E880A32E1FF05A4B00579553 /* Get 'er done.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get 'er done.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E880A3311FF05A4B00579553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E880A3331FF05A4B00579553 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		E880A34D1FF1DDD900579553 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E8409FE81FF4536600EEB32E /* CategoryViewController.swift */,
 				E880A3331FF05A4B00579553 /* ViewController.swift */,
 			);
 			name = Controllers;
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8409FE91FF4536600EEB32E /* CategoryViewController.swift in Sources */,
 				E880A3341FF05A4B00579553 /* ViewController.swift in Sources */,
 				E8409FC41FF40F1F00EEB32E /* DataModel.xcdatamodeld in Sources */,
 				E880A3321FF05A4B00579553 /* AppDelegate.swift in Sources */,

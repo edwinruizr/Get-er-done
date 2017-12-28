@@ -11,8 +11,16 @@ import CoreData
 
 class ViewController: UITableViewController {
     var itemArray = [Item]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-    let defaults = UserDefaults.standard
+    var selectedCategory : Category? {
+        
+        // runs when selectedCategory is set (when the segue is called)
+        didSet{
+        
+            loadItems()
+        }
+    }
+//    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+//    let defaults = UserDefaults.standard
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -21,8 +29,7 @@ class ViewController: UITableViewController {
 //        if let items = defaults.array(forKey: "listArray") as? [String] {
 //            itemArray = items
 //        }
-        
-        loadItems()
+
     }
 
     // MARK - Tableview datasource methods
@@ -62,6 +69,7 @@ class ViewController: UITableViewController {
             let item = Item(context: self.context)
             item.title = textField.text!
             item.done = false
+            item.parentCategory = self.selectedCategory
             // add new item to our array
             self.itemArray.append(item)
            
@@ -88,8 +96,16 @@ class ViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()){
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil){
         // read items from database with the request sent as parameter or default Item.fetchRequest()
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        
+        if let additionalPredicate = predicate{
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+        }else{
+            request.predicate = categoryPredicate
+        }
+        
         do{
            itemArray = try context.fetch(request)
         }catch{
@@ -109,10 +125,10 @@ extension ViewController: UISearchBarDelegate{
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
         // query for whatever the user searched
-        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
-        loadItems(with: request)
+        loadItems(with: request, predicate: predicate)
 
     }
     
