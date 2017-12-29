@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEC6575343113905EADD3A4F /* Pods_Get_er_done.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FBCDAC67FCA8EE5C300DCC /* Pods_Get_er_done.framework */; };
+		E828EEA91FF60D5600E612B5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E828EEA81FF60D5600E612B5 /* Data.swift */; };
 		E8409FC41FF40F1F00EEB32E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8409FC21FF40F1F00EEB32E /* DataModel.xcdatamodeld */; };
 		E8409FE91FF4536600EEB32E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8409FE81FF4536600EEB32E /* CategoryViewController.swift */; };
 		E880A3321FF05A4B00579553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E880A3311FF05A4B00579553 /* AppDelegate.swift */; };
@@ -14,16 +16,19 @@
 		E880A3371FF05A4B00579553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E880A3351FF05A4B00579553 /* Main.storyboard */; };
 		E880A3391FF05A4B00579553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E880A3381FF05A4B00579553 /* Assets.xcassets */; };
 		E880A33C1FF05A4B00579553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E880A33A1FF05A4B00579553 /* LaunchScreen.storyboard */; };
-		FA35A452693F57397A16B72D /* Pods_Get__er_done.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ACEAB0433BA93DAAA0754D /* Pods_Get__er_done.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		15ACEAB0433BA93DAAA0754D /* Pods_Get__er_done.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get__er_done.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2610F0A1B0F1C26137CA5E66 /* Pods-Get 'er done.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get 'er done.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get 'er done/Pods-Get 'er done.release.xcconfig"; sourceTree = "<group>"; };
 		396738345B8443688C9C9F67 /* Pods-Get 'er done.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get 'er done.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get 'er done/Pods-Get 'er done.debug.xcconfig"; sourceTree = "<group>"; };
+		64FBCDAC67FCA8EE5C300DCC /* Pods_Get_er_done.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_er_done.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9097AD8875DC63C4EB5FB8BA /* Pods-Get er done.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get er done.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get er done/Pods-Get er done.release.xcconfig"; sourceTree = "<group>"; };
+		E01C5578B591D320D8D81154 /* Pods-Get er done.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get er done.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get er done/Pods-Get er done.debug.xcconfig"; sourceTree = "<group>"; };
+		E828EEA81FF60D5600E612B5 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E8409FC31FF40F1F00EEB32E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E8409FE81FF4536600EEB32E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		E880A32E1FF05A4B00579553 /* Get 'er done.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get 'er done.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E880A32E1FF05A4B00579553 /* Get er done.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get er done.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E880A3311FF05A4B00579553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E880A3331FF05A4B00579553 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E880A3361FF05A4B00579553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA35A452693F57397A16B72D /* Pods_Get__er_done.framework in Frameworks */,
+				AEC6575343113905EADD3A4F /* Pods_Get_er_done.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +54,8 @@
 			children = (
 				396738345B8443688C9C9F67 /* Pods-Get 'er done.debug.xcconfig */,
 				2610F0A1B0F1C26137CA5E66 /* Pods-Get 'er done.release.xcconfig */,
+				E01C5578B591D320D8D81154 /* Pods-Get er done.debug.xcconfig */,
+				9097AD8875DC63C4EB5FB8BA /* Pods-Get er done.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -57,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				15ACEAB0433BA93DAAA0754D /* Pods_Get__er_done.framework */,
+				64FBCDAC67FCA8EE5C300DCC /* Pods_Get_er_done.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -64,7 +72,7 @@
 		E880A3251FF05A4B00579553 = {
 			isa = PBXGroup;
 			children = (
-				E880A3301FF05A4B00579553 /* Get 'er done */,
+				E880A3301FF05A4B00579553 /* Get er done */,
 				E880A32F1FF05A4B00579553 /* Products */,
 				1EC829B8BD163BA2A359BCAB /* Pods */,
 				B161650F6E55669D8692F18C /* Frameworks */,
@@ -74,12 +82,12 @@
 		E880A32F1FF05A4B00579553 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E880A32E1FF05A4B00579553 /* Get 'er done.app */,
+				E880A32E1FF05A4B00579553 /* Get er done.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E880A3301FF05A4B00579553 /* Get 'er done */ = {
+		E880A3301FF05A4B00579553 /* Get er done */ = {
 			isa = PBXGroup;
 			children = (
 				E880A34B1FF1DDA900579553 /* Data Model */,
@@ -89,12 +97,13 @@
 				E880A34E1FF1DDE900579553 /* Supporting Files */,
 				E880A33D1FF05A4B00579553 /* Info.plist */,
 			);
-			path = "Get 'er done";
+			path = "Get er done";
 			sourceTree = "<group>";
 		};
 		E880A34B1FF1DDA900579553 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				E828EEA81FF60D5600E612B5 /* Data.swift */,
 				E8409FC21FF40F1F00EEB32E /* DataModel.xcdatamodeld */,
 			);
 			name = "Data Model";
@@ -133,9 +142,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E880A32D1FF05A4B00579553 /* Get 'er done */ = {
+		E880A32D1FF05A4B00579553 /* Get er done */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E880A3401FF05A4B00579553 /* Build configuration list for PBXNativeTarget "Get 'er done" */;
+			buildConfigurationList = E880A3401FF05A4B00579553 /* Build configuration list for PBXNativeTarget "Get er done" */;
 			buildPhases = (
 				EE5387B2779F223AF24CD9E3 /* [CP] Check Pods Manifest.lock */,
 				E880A32A1FF05A4B00579553 /* Sources */,
@@ -148,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = "Get 'er done";
+			name = "Get er done";
 			productName = "Get 'er done";
-			productReference = E880A32E1FF05A4B00579553 /* Get 'er done.app */;
+			productReference = E880A32E1FF05A4B00579553 /* Get er done.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E880A3291FF05A4B00579553 /* Build configuration list for PBXProject "Get 'er done" */;
+			buildConfigurationList = E880A3291FF05A4B00579553 /* Build configuration list for PBXProject "Get er done" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E880A32D1FF05A4B00579553 /* Get 'er done */,
+				E880A32D1FF05A4B00579553 /* Get er done */,
 			);
 		};
 /* End PBXProject section */
@@ -207,7 +216,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Get 'er done/Pods-Get 'er done-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Get er done/Pods-Get er done-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -218,7 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get 'er done/Pods-Get 'er done-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get er done/Pods-Get er done-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		57E48F381B34707DE3391B98 /* [CP] Copy Pods Resources */ = {
@@ -233,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get 'er done/Pods-Get 'er done-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get er done/Pods-Get er done-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE5387B2779F223AF24CD9E3 /* [CP] Check Pods Manifest.lock */ = {
@@ -247,7 +256,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Get 'er done-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Get er done-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -262,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8409FE91FF4536600EEB32E /* CategoryViewController.swift in Sources */,
+				E828EEA91FF60D5600E612B5 /* Data.swift in Sources */,
 				E880A3341FF05A4B00579553 /* ViewController.swift in Sources */,
 				E8409FC41FF40F1F00EEB32E /* DataModel.xcdatamodeld in Sources */,
 				E880A3321FF05A4B00579553 /* AppDelegate.swift in Sources */,
@@ -399,15 +409,15 @@
 		};
 		E880A3411FF05A4B00579553 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 396738345B8443688C9C9F67 /* Pods-Get 'er done.debug.xcconfig */;
+			baseConfigurationReference = E01C5578B591D320D8D81154 /* Pods-Get er done.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQWX72V98L;
-				INFOPLIST_FILE = "Get 'er done/Info.plist";
+				INFOPLIST_FILE = "Get er done/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.edwinr.Get--er-done";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.edwinr.Get-er-done";
+				PRODUCT_NAME = "Get er done";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -415,15 +425,15 @@
 		};
 		E880A3421FF05A4B00579553 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2610F0A1B0F1C26137CA5E66 /* Pods-Get 'er done.release.xcconfig */;
+			baseConfigurationReference = 9097AD8875DC63C4EB5FB8BA /* Pods-Get er done.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQWX72V98L;
-				INFOPLIST_FILE = "Get 'er done/Info.plist";
+				INFOPLIST_FILE = "Get er done/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.edwinr.Get--er-done";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.edwinr.Get-er-done";
+				PRODUCT_NAME = "Get er done";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,7 +442,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E880A3291FF05A4B00579553 /* Build configuration list for PBXProject "Get 'er done" */ = {
+		E880A3291FF05A4B00579553 /* Build configuration list for PBXProject "Get er done" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E880A33E1FF05A4B00579553 /* Debug */,
@@ -441,7 +451,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E880A3401FF05A4B00579553 /* Build configuration list for PBXNativeTarget "Get 'er done" */ = {
+		E880A3401FF05A4B00579553 /* Build configuration list for PBXNativeTarget "Get er done" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E880A3411FF05A4B00579553 /* Debug */,
