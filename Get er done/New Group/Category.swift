@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  Category.swift
 //  Get er done
 //
 //  Created by Edwin Ruiz on 12/28/17.
@@ -9,8 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Data: Object {
+class Category: Object {
     @objc dynamic var name: String = ""
-    @objc dynamic var age: Int = 0
-    
+    let items = List<Item>()
 }
